@@ -1,0 +1,145 @@
+$bluette: #0465ac;
+$border: 1px solid #e4e6e5;
+
+@mixin transition($prop, $timing, $t-function, $delay: 0) {
+  -webkit-transition: $prop $timing $t-function $delay;
+  -moz-transition: $prop $timing $t-function $delay;
+  -o-transition: $prop $timing $t-function $delay;
+  transition: $prop $timing $t-function $delay;
+}
+
+.accordion {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .panel-accordion,
+  .accordion-main-title {
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+  }
+
+  //
+  // TITOLO PRINCIPALE
+  //
+  .accordion-main-title {
+    font-size: 18px;
+    color: #333;
+    height: 60px;
+    line-height: 60px;
+    background-color: #FFF;
+    padding-left: 25px;
+    margin: 0;
+    border-bottom: $border;
+  }
+
+  //
+  // PARTE GENERALE ACCORDION
+  //
+  .panel-accordion+.panel-accordion {
+    border-top: $border;
+  }
+
+  .panel-accordion {
+    @include transition(all, .3s, ease-in-out, .3s);
+  }
+
+  .panel-accordion {
+    &.open .icons .icon-up,
+    .icons .icon-down {
+      display: block;
+    }
+
+    .icons .icon-up,
+    &.open .icons .icon-down {
+      display: none;
+    }
+
+    &.open {
+        margin-bottom: 30px;
+        margin-top: 30px;
+        border-top: none;
+
+        .panel-content {
+          max-height: 500px;
+        }
+    }
+  }
+
+  //
+  // PARTE DI HEADING: titolo e sottotitolo
+  //
+  .panel-heading {
+    height: 50px;
+    background-color: #FFF;
+    cursor: pointer;
+
+    &.with-subtitle {
+      min-height: 70px;
+
+      .icons i {
+        line-height: 70px;
+      }
+
+      .panel-title {
+        height: 38px;
+      }
+    }
+
+    .panel-text {
+      padding-left: 25px;
+      display: inline-block;
+    }
+
+    .icons {
+      display: inline-block;
+      float: right;
+
+      i {
+          padding-left: 25px;
+          padding-right: 25px;
+          font-size: 26px;
+          line-height: 50px;
+          color: $bluette;
+      }
+    }
+    
+   .panel-title {
+     font-size: 14px;
+     font-weight: 600;
+     color: $bluette;
+     height: 50px;
+     line-height: 50px;
+   }
+
+   &.open .panel-title {
+     font-size: 18px;
+   }
+
+   .panel-subtitle {
+     font-size: 12px;
+     color: #999;
+     font-weight: 600;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+   }
+  }
+
+  //
+  // PARTE DI CONTENUTO: corpo testo
+  //
+  .panel-content {
+    font-size: 13px;
+    color: #333;
+    background-color: #FFF;
+    max-height: 0px;
+    overflow-y: hidden;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+
+  .panel-body {
+    padding: 0px 25px 25px;
+  }
+}

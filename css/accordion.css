@@ -1,0 +1,84 @@
+.accordion {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .accordion .panel-accordion,
+  .accordion .accordion-main-title {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2); }
+  .accordion .accordion-main-title {
+    font-size: 18px;
+    color: #333;
+    height: 60px;
+    line-height: 60px;
+    background-color: #FFF;
+    padding-left: 25px;
+    margin: 0;
+    border-bottom: 1px solid #e4e6e5; }
+  .accordion .panel-accordion + .panel-accordion {
+    border-top: 1px solid #e4e6e5; }
+  .accordion .panel-accordion {
+    -webkit-transition: all 0.3s ease-in-out 0.3s;
+    -moz-transition: all 0.3s ease-in-out 0.3s;
+    -o-transition: all 0.3s ease-in-out 0.3s;
+    transition: all 0.3s ease-in-out 0.3s; }
+  .accordion .panel-accordion.open .icons .icon-up,
+  .accordion .panel-accordion .icons .icon-down {
+    display: block; }
+  .accordion .panel-accordion .icons .icon-up, .accordion .panel-accordion.open .icons .icon-down {
+    display: none; }
+  .accordion .panel-accordion.open {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border-top: none; }
+    .accordion .panel-accordion.open .panel-content {
+      max-height: 500px; }
+  .accordion .panel-heading {
+    height: 50px;
+    background-color: #FFF;
+    cursor: pointer; }
+    .accordion .panel-heading.with-subtitle {
+      min-height: 70px; }
+      .accordion .panel-heading.with-subtitle .icons i {
+        line-height: 70px; }
+      .accordion .panel-heading.with-subtitle .panel-title {
+        height: 38px; }
+    .accordion .panel-heading .panel-text {
+      padding-left: 25px;
+      display: inline-block; }
+    .accordion .panel-heading .icons {
+      display: inline-block;
+      float: right; }
+      .accordion .panel-heading .icons i {
+        padding-left: 25px;
+        padding-right: 25px;
+        font-size: 26px;
+        line-height: 50px;
+        color: #0465ac; }
+    .accordion .panel-heading .panel-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0465ac;
+      height: 50px;
+      line-height: 50px; }
+    .accordion .panel-heading.open .panel-title {
+      font-size: 18px; }
+    .accordion .panel-heading .panel-subtitle {
+      font-size: 12px;
+      color: #999;
+      font-weight: 600;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+  .accordion .panel-content {
+    font-size: 13px;
+    color: #333;
+    background-color: #FFF;
+    max-height: 0px;
+    overflow-y: hidden;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; }
+  .accordion .panel-body {
+    padding: 0px 25px 25px; }
+
+/*# sourceMappingURL=accordion.css.map */
